@@ -147,4 +147,14 @@ public class BrigadeListTest {
         Brigade expected = brigadeWithAllWorkers;
         Assert.assertEquals(expected, actual);
     }
+
+    @Test (expected = TenderFailedException.class)
+    public void chooseTenderWinnerEngineerEngineerPainterPlastererWorkers() {
+        Contract contract = new Contract();
+        contract.addProfession(Professions.CIVIL_ENGINEER);
+        contract.addProfession(Professions.CIVIL_ENGINEER);
+        contract.addProfession(Professions.PAINTER_PLASTERER);
+        contract.setNumberOfWorkers(3);
+        brigadeList.chooseTenderWinner(contract);
+    }
 }
