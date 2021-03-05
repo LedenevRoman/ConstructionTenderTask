@@ -17,7 +17,7 @@ public class Tender {
         requiredProfessions.add(profession);
     }
 
-    public boolean ifConformsToContract(Brigade brigade) {
+    private boolean ifConformsToContract(Brigade brigade) {
         ArrayList<Professions> tempBrigadeProfessionsArrayList = new ArrayList<>(brigade.getBrigadeProfessions());
         for (Professions contractProfession : requiredProfessions) {
             if (tempBrigadeProfessionsArrayList.contains(contractProfession)) {
