@@ -30,11 +30,7 @@ public class TenderTest {
     private static final Worker CONCRETEWORKER1800 = new Worker();
     private static final Worker PAINTERPLASTERER1700 = new Worker();
 
-
-    @Before
-    public void setUp() {
-        tender = new Tender();
-
+    static {
         CIVILENGINEER3200.setSalary(3200);
         CIVILENGINEER3200.addProfession(Professions.CIVIL_ENGINEER);
 
@@ -110,6 +106,11 @@ public class TenderTest {
         ALL_BRIGADES.add(BRIGADE_WITH_ENGINEER_ENGINEER_ARCHITECT_ECONOMIST_SALARY_12400);
         ALL_BRIGADES.add
                 (BRIGADE_WITH_CRANEOPERATOR_MASTEROFCONSTRUCTION_CARPENTER_ROOFER_CONCRETEWORKER_PAINTER_SALARY_11700);
+    }
+
+    @Before
+    public void setUp() {
+        tender = new Tender();
 
     }
 
