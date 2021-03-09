@@ -39,14 +39,9 @@ public class Tender {
         if (applicants.isEmpty()) {
             throw new TenderFailedException("Brigade not found");
         } else {
-            for (int i = 0; i < applicants.size() - 1; i++) {
-                if (applicants.get(i).getBrigadeSalary() <= applicants.get(i + 1).getBrigadeSalary()) {
-                    Brigade temp = applicants.get(i);
-                    applicants.set(i, applicants.get(i + 1));
-                    applicants.set(i + 1, temp);
-                }
-            }
-            return applicants.get(applicants.size() - 1);
+            BrigadeSalaryComporator brigadeSalaryComparator = new BrigadeSalaryComporator();
+            applicants.sort(brigadeSalaryComparator);
+            return applicants.get(0);
         }
     }
 }
