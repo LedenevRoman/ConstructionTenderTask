@@ -2,11 +2,12 @@ package ConstructionTender;
 
 import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 
 public class Worker {
     private int salary;
-    private HashSet<Professions> workerProfessionsSet = new HashSet<>();
+    private Set<Professions> workerProfessionsSet = new HashSet<>();
 
     public Worker() {
     }
@@ -19,7 +20,7 @@ public class Worker {
         this.salary = salary;
     }
 
-    public HashSet<Professions> getProfessions() {
+    public Set<Professions> getProfessions() {
         return workerProfessionsSet;
     }
 

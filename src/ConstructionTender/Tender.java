@@ -1,16 +1,17 @@
 package ConstructionTender;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tender {
-    private ArrayList<Professions> requiredProfessions = new ArrayList<>();
+    private List<Professions> requiredProfessions = new ArrayList<>();
 
-    public ArrayList<Professions> getRequiredProfessions() {
+    public List<Professions> getRequiredProfessions() {
         return requiredProfessions;
     }
 
-    public void setRequiredProfessions(ArrayList<Professions> contactProfessions) {
-        this.requiredProfessions = contactProfessions;
+    public void setRequiredProfessions(ArrayList<Professions> requiredProfessions) {
+        this.requiredProfessions = requiredProfessions;
     }
 
     public void addProfession(Professions profession) {
@@ -18,10 +19,10 @@ public class Tender {
     }
 
     private boolean ifConformsToContract(Brigade brigade) {
-        ArrayList<Professions> tempBrigadeProfessionsArrayList = new ArrayList<>(brigade.getBrigadeProfessions());
-        for (Professions contractProfession : requiredProfessions) {
-            if (tempBrigadeProfessionsArrayList.contains(contractProfession)) {
-                tempBrigadeProfessionsArrayList.remove(contractProfession);
+        List<Professions> tempBrigadeProfessionsList = new ArrayList<>(brigade.getBrigadeProfessions());
+        for (Professions requiredProfession : requiredProfessions) {
+            if (tempBrigadeProfessionsList.contains(requiredProfession)) {
+                tempBrigadeProfessionsList.remove(requiredProfession);
             } else {
                 return false;
             }
@@ -29,8 +30,8 @@ public class Tender {
         return true;
     }
 
-    public Brigade getSuitableBrigade(ArrayList<Brigade> allBrigades) {
-        ArrayList<Brigade> applicants = new ArrayList<>();
+    public Brigade getSuitableBrigade(List<Brigade> allBrigades) {
+        List<Brigade> applicants = new ArrayList<>();
         for (Brigade brigade: allBrigades) {
             if (ifConformsToContract(brigade)) {
                 applicants.add(brigade);

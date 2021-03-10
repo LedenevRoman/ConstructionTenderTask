@@ -1,17 +1,18 @@
 package ConstructionTender;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Brigade {
-    private final ArrayList<Worker> workerArrayList = new ArrayList<>();
+    private final List<Worker> workerList = new ArrayList<>();
     private int brigadeSalary;
 
     public Brigade(){
     }
 
-    public ArrayList<Worker> getWorkerArrayList() {
-        return workerArrayList;
+    public List<Worker> getWorkerList() {
+        return workerList;
     }
 
     public int getBrigadeSalary() {
@@ -19,13 +20,13 @@ public class Brigade {
     }
 
     public void addWorker(Worker worker) {
-        this.workerArrayList.add(worker);
+        this.workerList.add(worker);
         this.brigadeSalary += worker.getSalary();
     }
 
     public ArrayList<Professions> getBrigadeProfessions() {
         ArrayList<Professions> brigadeProfessions = new ArrayList<>();
-        for (Worker worker : workerArrayList) {
+        for (Worker worker : workerList) {
             brigadeProfessions.addAll(worker.getProfessions());
         }
         return brigadeProfessions;
@@ -36,18 +37,18 @@ public class Brigade {
         if (o == null || getClass() != o.getClass()) return false;
         Brigade brigade = (Brigade) o;
         return brigadeSalary == brigade.brigadeSalary &&
-                workerArrayList.equals(brigade.workerArrayList);
+                workerList.equals(brigade.workerList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workerArrayList, brigadeSalary);
+        return Objects.hash(workerList, brigadeSalary);
     }
 
     @Override
     public String toString() {
         return "Brigade{" +
-                "workerArrayList=" + workerArrayList +
+                "workerArrayList=" + workerList +
                 ", brigadeSalary=" + brigadeSalary +
                 '}';
     }

@@ -6,10 +6,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TenderTest {
     private Tender tender;
-    private static final ArrayList<Brigade> ALL_BRIGADES = new ArrayList<>();
+    private static final List<Brigade> ALL_BRIGADES = new ArrayList<>();
     private static final Brigade BRIGADE_EMPTY = new Brigade();
     private static final Brigade BRIGADE_WITH_ENGINEER_ARCHITECT_SURVEYOR_ECONOMIST_TECHNOLOGIST_SALARY_14500
             = new Brigade();

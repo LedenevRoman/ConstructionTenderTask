@@ -11,6 +11,6 @@ public enum Professions {
     CARPENTER,
     ROOFER,
     CONCRETE_WORKER,
-    PAINTER_PLASTERER;
+    PAINTER_PLASTERER
 
 }
