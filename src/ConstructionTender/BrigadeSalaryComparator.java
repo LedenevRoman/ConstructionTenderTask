@@ -2,7 +2,7 @@ package ConstructionTender;
 
 import java.util.Comparator;
 
-public class BrigadeSalaryComporator implements Comparator<Brigade> {
+public class BrigadeSalaryComparator implements Comparator<Brigade> {
 
     @Override
     public int compare(Brigade o1, Brigade o2) {

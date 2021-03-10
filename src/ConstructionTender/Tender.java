@@ -39,7 +39,7 @@ public class Tender {
         if (applicants.isEmpty()) {
             throw new TenderFailedException("Brigade not found");
         } else {
-            BrigadeSalaryComporator brigadeSalaryComparator = new BrigadeSalaryComporator();
+            BrigadeSalaryComparator brigadeSalaryComparator = new BrigadeSalaryComparator();
             applicants.sort(brigadeSalaryComparator);
             return applicants.get(0);
         }
